@@ -1,0 +1,47 @@
+.game-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+.game-container .world-container {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-gap: 5px;
+}
+.game-container .world-container .world-tile {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+.game-container .world-container .world-tile:hover {
+  background-color: #3498db;
+}
+.game-container .inventory-container {
+  margin-top: 20px;
+}
+.game-container .tools-container {
+  margin-top: 20px;
+}
+.game-container .tools-container .tool {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.game-container .tools-container .tool:hover {
+  background-color: #217dbb;
+}
+.game-container .reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.game-container .reset-button:hover {
+  background-color: #d62c1a;
+}/*# sourceMappingURL=style.css.map */
