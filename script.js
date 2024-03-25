@@ -4,6 +4,24 @@ const Game = {
 
   init() {
     // Initialize the game world with predefined tiles
+    const totalTiles = 20 * 10; // Total number of tiles (30 columns x 10 rows)
+    const tileTypes = ["sky", "cloud", "ground"]; // Possible tile types
+    const worldContainer = document.querySelector(".world-container"); // Get the world container element
+
+    for (let i = 0; i < totalTiles; i++) {
+      const randomTypeIndex = Math.floor(Math.random() * tileTypes.length); // Generate random index for tile type
+      const type = tileTypes[randomTypeIndex]; // Randomly select a tile type
+      const className = `world-tile ${type}`; // Define class name for the tile
+
+      // Create a new tile element
+      const tile = document.createElement("div");
+      tile.className = className; // Set the class name for the tile
+      worldContainer.appendChild(tile); // Append the tile to the world container
+
+      // Add the tile to the world array
+      this.world.push({ type, element: tile });
+    }
+
     // Initialize event listeners for user interactions
   },
 
@@ -60,8 +78,7 @@ const Game = {
   resetWorld() {
     // Reset the game world to its initial state
     this.world = []; // Clear the world array
-    // Reinitialize the game world with predefined tiles
-    // (You can implement this logic based on your specific requirements)
+    this.init(); // Reinitialize the game world with random tiles
     console.log("Game world reset");
   },
 };
@@ -69,16 +86,6 @@ const Game = {
 // Initialize the game
 Game.init();
 
-// Select a tool
-Game.selectTool("axe");
-
-// Remove a tile from the world
-const tileToRemove = Game.world[0]; // Assuming the first tile in the world array
-Game.removeTile(tileToRemove);
-
-// Place a tile back into the world from the inventory
-const tileToPlace = Game.inventory[0]; // Assuming the first tile in the inventory array
-Game.placeTile(tileToPlace);
-
-// Reset the game world
-Game.resetWorld();
+document.querySelector(".reset-button").addEventListener("click", () => {
+  Game.resetWorld();
+});

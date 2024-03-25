@@ -5,14 +5,23 @@
 }
 .game-container .world-container {
   display: grid;
-  grid-template-columns: repeat(5, 50px);
-  grid-gap: 5px;
+  grid-template-columns: repeat(20, 30px);
+  grid-template-rows: repeat(10, 30px);
+  grid-gap: 1px;
 }
 .game-container .world-container .world-tile {
-  width: 50px;
-  height: 50px;
-  background-color: white;
+  width: 30px;
+  height: 30px;
   border: 1px solid #ccc;
+}
+.game-container .world-container .world-tile.sky {
+  background-color: #87ceeb;
+}
+.game-container .world-container .world-tile.cloud {
+  background-color: white;
+}
+.game-container .world-container .world-tile.ground {
+  background-color: #8b4513;
 }
 .game-container .world-container .world-tile:hover {
   background-color: #3498db;

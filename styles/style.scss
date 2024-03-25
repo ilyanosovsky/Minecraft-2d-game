@@ -7,14 +7,32 @@ $primary-color: #3498db;
 
     .world-container {
         display: grid;
-        grid-template-columns: repeat(5, 50px);
-        grid-gap: 5px;
+        grid-template-columns: repeat(20, 30px);
+        grid-template-rows: repeat(10, 30px);
+        grid-gap: 1px;
 
         .world-tile {
-            width: 50px;
-            height: 50px;
-            background-color: white;
+            width: 30px;
+            height: 30px;
+            // background-color: white;
             border: 1px solid #ccc;
+
+            // Sky tile
+            &.sky {
+                background-color: #87ceeb; // Light blue color for the sky
+            }
+
+            // Cloud tile
+            &.cloud {
+                background-color: white; // White color for clouds
+                // border: none; // Remove border for clouds
+                // Add cloud icon or background image here if desired
+            }
+
+            // Ground tile
+            &.ground {
+                background-color: #8b4513; // Brown color for the ground
+            }
 
             &:hover {
                 background-color: $primary-color;
